@@ -200,13 +200,13 @@ Now perform the analysis and return the JSON object only.
       if (jsonStart === -1 || jsonEnd === 0) throw new Error('No JSON found');
       const jsonString = analysisText.slice(jsonStart, jsonEnd);
       analysis = JSON.parse(jsonString);
-    } catch (e) {
+    } catch (e: any) {
       console.error('Failed to parse JSON:', e.message);
       throw new Error('Invalid response from AI');
     }
 
     return analysis;
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error:', error.message);
     throw error;
   }
@@ -268,11 +268,11 @@ Return ONLY the JSON object that conforms exactly to the schema.
       }
 
       return parsed.data;
-    } catch (e) {
+    } catch (e: any) {
       console.error('Failed to parse JSON:', e.message);
       throw new Error('Invalid response from AI');
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error:', error.message);
     throw error;
   }

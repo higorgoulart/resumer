@@ -127,7 +127,7 @@ export default function ResumeForm({ resumeData, apiKey, onChange, setError }: P
           title={section.title}
           updateSection={(v: any) => updateSection(index, { ...section, title: v })}
           onAdd={() => {
-            const items = [...section.items];
+            const items: any[] = [...section.items];
             if (section.type === "experience")
               items.push({
                 role: "",
@@ -164,7 +164,7 @@ export default function ResumeForm({ resumeData, apiKey, onChange, setError }: P
               <CardItem
                 key={i}
                 onRemove={() => {
-                  const items = section.items.filter((_, idx) => idx !== i);
+                  const items: any[] = section.items.filter((_, idx) => idx !== i);
                   updateSection(index, { ...section, items });
                 }}
               >
